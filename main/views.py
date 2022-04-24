@@ -4,6 +4,6 @@ from .models import *
 # Create your views here.
 def index(request):
     data = {
-
+        'levels' : Level.objects.all(),
     }
-    return render(request, "main/index.html", data) 
+    return render(request, "main/index.html", data)
