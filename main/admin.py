@@ -1,10 +1,8 @@
 from django.contrib import admin
 from .models import *
+from city.models import City, Navigation
 
-class CityAdmin (admin.ModelAdmin):
-    prepopulated_fields = {
-        'slug' : ('name',)
-    }
 
 # Register your models here.
-#admin.site.register()
+admin.site.register(City)
+admin.site.register(Navigation)
