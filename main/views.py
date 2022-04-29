@@ -10,3 +10,9 @@ def index(request):
         'navigation' : Navigation.objects.all(),
     }
     return render(request, "main/index.html", data)
+def histmap(request):
+    data = {
+        
+    }
+    # return render(request, "main/index.html", data)
+    pass

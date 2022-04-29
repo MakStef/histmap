@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 body {
     background-color: #000;
-    color: #fff;
+    color: #ececec;
     font-size: 1rem;
+    font-family: 'Roboto Slab', sans-serif;
 }
 a {
     display: inline-block;
     color: inherit;
     text-decoration: none;
-    transition: 0.1s transform;
+    transition: 0.1s all;
 }
 a:hover {
+    color: #fff;
     transform: scale(1.2);
+    text-shadow: 0 0 10px #FFFFFF;
 }
 /* accurate classes */
 .wrapper-global {
@@ -19,7 +23,6 @@ a:hover {
 .left-nav {
     display: inline-flex;
     flex-direction: column;
-    flex: 0 0 auto;
     align-items: center;
     text-align: center;
     width: 80px;
@@ -28,10 +31,12 @@ a:hover {
     top: 0;
     left: 0;
     border: 2px solid #fff;
+    border-top: 0px;
     border-left: 0px;
-    border-radius: 0 4px 4px 0px;
+    border-radius: 0 0 20% 0;
 }
 .left-nav li {
+    flex: 1 0 auto;
     display: block;
     padding: 8px;
 }
@@ -45,6 +50,8 @@ a:hover {
 }
 .article-header {
     margin: 2rem 0 0 0;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .article-body {
     margin: 1rem 0 2.5rem 0;
@@ -54,6 +61,19 @@ a:hover {
 }
 .creator_all {
     margin: 0;
+}
+.contacts {
+    padding: 8px 0;
+    font-size: 1.25rem;
+    color: inherit;
+}
+.contacts .item {
+    text-align: center;
+    flex: 1 0 auto;
+    padding: 4px;
+}
+.contacts .item_first {
+    flex: 1 0 25%
 }
 /* global classes */
 .flex {
@@ -67,4 +87,13 @@ a:hover {
 }
 .full-width {
     width: 100%;
+}
+/* media queries */
+@media (max-width: 450px) {
+    .articles {
+        padding: 0 12px;
+    }
+    .contacts {
+        flex-direction:  column;
+    }
 }

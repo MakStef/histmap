@@ -4,6 +4,7 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'main/css/null.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/1b17008982.js" crossorigin="anonymous"></script>
 {% endblock %}
 {% block body %}
     <div class="wrapper-global flex column">
@@ -41,12 +42,26 @@
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. In facere architecto, saepe voluptatum officia molestiae amet voluptates aperiam quasi minima rerum temporibus ducimus, ipsam doloribus? Nisi, voluptates corrupti. Commodi, eum! 
                         </div>
                         <div class="creator creator_maksym">
-                            Stefaniv Maksym - lived in west Ukraine whole life. Got skills in: Python, Django, HTML, CSS, SCSS, JavaScript, SQL, UI/UX and tools for them like VS Code, console (Ubuntu, Windows), SQLite, PhotoShop and GNU Images Manipulator. Learned object-oriented programming, HTTP, BEM methodology.</div>
+                            Stefaniv Maksym - lived in west Ukraine whole life. Got skills in: Python, Django, HTML, CSS, SCSS, Bootstrap, JavaScript, SQL, UI/UX and tools for them like VS Code, console (Ubuntu, Windows), SQLite, PhotoShop and GNU Images Manipulator. Learned object-oriented programming, HTTP, BEM methodology.</div>
                         </div>
                     <footer class="article-footer">
                         <p>Our contacts:</p>
-                        <div class="contacts contacts_misha"></div>
-                        <div class="contacts contacts_maksym"></div>
+                        <ul class="contacts contacts_misha flex row">
+                            <li class="item item_first">Misha's contacts:</li>
+                            <li class="item"><a target="_blank href="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="item"><a target="_blank href="facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="item"><a target="_blank href="twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="item"><a target="_blank href="mail"><i class="fa-solid fa-at"></i></a></li>
+                            <li class="item"><a target="_blank href="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                        <ul class="contacts contacts_maksym flex row">
+                            <li class="item item_first">Maksym's contacts:</li>
+                            <li class="item"><a href="https://instagram.com/maxymstefaniv" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="item"><a href="https://facebook.com/maxymstefaniv" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="item"><a href="https://twitter.com/MaksimStefaniv" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="item"><a href="mailto:maxymstefaniv@gmail.com" target="_blank>"<i class="fa-solid fa-at"></i></a></li>
+                            <li class="item"><a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
                     </footer>
                 </article>
             </div>
