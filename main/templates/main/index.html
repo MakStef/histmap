@@ -2,9 +2,10 @@
 {% load static %}
 {% block title %}{% endblock %}
 {% block head %}
-    <link rel="stylesheet" href="{% static 'main/css/null.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <script src="https://kit.fontawesome.com/1b17008982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main/css/null.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 {% endblock %}
 {% block body %}
     <div class="wrapper-global flex column">
@@ -16,13 +17,7 @@
             </ul>
         </div>
         <div class="content flex row">
-            <nav class="left-nav">
-                <ul class="flex column">
-                    {% for element in navigation %}
-                        <li><a href="{% url element.link %}">{{ element.text }}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
+            {% include 'main/navigation.html' %}
             <div class="articles flex column">
                 <article class="website-about">
                     <header class="article-header">ABOUT THE HISTMAP WEBSITE</header>

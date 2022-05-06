@@ -1,0 +1,7 @@
+<nav class="left-nav">
+    <ul class="flex column">
+        {% for element in navigation %}
+            <li><a href="{% url element.link %}">{{ element.text }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

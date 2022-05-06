@@ -1,0 +1,10 @@
+.items {
+    flex: 1 0 auto;
+}
+.items ul {
+    align-items: center;
+}
+.item {
+    padding: 8px;
+    flex: 1 0 auto;
+}
