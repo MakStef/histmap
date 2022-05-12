@@ -1,15 +1,24 @@
 from django.shortcuts import render, get_object_or_404
+from django.template import RequestContext
+
+from .utils import histobj_unzipper as unzip
+
 from .models import *
-import random
+from random import choice
 
 # Create your views here.
 def index(request):
     navigation = Navigation.objects.all()
-    random_image =  random.choice(list(Location.objects.all())).image
     context = {
         'navigation' : navigation,
-        'random_image' : random_image,
+        'is_image_random': False,
+        'image' : None,
     }
+    if len(Location.objects.all()) != 0:
+        context['is_image_random'] = True
+        context['image'] = (choice(list(Location.objects.all()))).image
+    else:
+        context['is_image_random'] = False
     return render(request, "main/index.html", context)
 
 def countries(request):
@@ -44,9 +53,11 @@ def history_objects(request, country_slug, location_slug):
     }
     return render(request, 'main/search.html', context)
 
-def history_object(request, country_slug, location_slug, object_slug):
+def history_object(request, country_slug, location_slug, history_object_slug):
+    # Unwraps all archived levels that weren't unwrapped already
+    unzip.unzip(request, history_object_slug)
     navigation = Navigation.objects.all()
-    object = History_Object.objects.get(slug=object_slug)
+    object = History_Object.objects.get(slug=history_object_slug)
     context = {
         'navigation' : navigation,
         'object' : object,

@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% load static %}
-{% block title %}{% endblock %}
+{% block title %}Homepage HISTMAP{% endblock %}
 {% block head %}
     <script src="https://kit.fontawesome.com/1b17008982.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'main/css/null.css' %}">
@@ -12,7 +12,7 @@
         <div class="gallery-greets gallery full-width">
             <ul>
                 <li>
-                    <img class="full-width" src="/{{ BASIC_DIR }}media/{{random_image}}" alt="Welcome image">
+                    <img class="full-width" src="media/{{image}}" alt="Welcome image">
                 </li>
             </ul>
         </div>
@@ -20,16 +20,16 @@
             {% include 'main/navigation.html' %}
             <div class="articles flex column">
                 <article class="website-about">
-                    <header class="article-header">ABOUT THE HISTMAP WEBSITE</header>
+                    <header class="article-header">ПРО HISTMAP WEBSITE</header>
                     <div class="article-body">
                         Lorem about this website: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis non ut similique officiis quae numquam amet sit laudantium. Accusamus repellat natus dolore reprehenderit quasi quod quia eligendi praesentium et sunt.
                     </div>
                 </article>
                 <article class="creators-about">
-                    <header class="article-header">ABOUT US</header>
+                    <header class="article-header">ПРО НАС</header>
                     <div class="article-body">
                         <div class="creator creator_all">
-                            We are guys from west Ukraine, who made this website for our programming course project. We chose this case because we think that everyone should have possibility to discover historical objects even if they're cannot do it by themselves. We realized it by design this objects in Unity and display on webpage.
+                            Ми хлопці із західної України, які створили цей вебсайт для нашого курсового проекту з програмування.Ми вибрали цю справу, тому що думаємо, що кожен повинен мати можливість розглянути різноманітні історичні об'єкти, навіть якщо вони не можуть зробити це самостійно побувавши там.Ми втілили це у життя, створюючи ці об'єкти в Unity та відображаючи на веб-сторінці, на котру було переадресовано та котру було заповнено за допомогою фреймворка Django.
                         </div>
                         <div class="creator creator_misha">
                             Про себе, Жмихась.
@@ -37,12 +37,12 @@
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. In facere architecto, saepe voluptatum officia molestiae amet voluptates aperiam quasi minima rerum temporibus ducimus, ipsam doloribus? Nisi, voluptates corrupti. Commodi, eum! 
                         </div>
                         <div class="creator creator_maksym">
-                            Stefaniv Maksym - lived in west Ukraine whole life. Got skills in: Python, Django, HTML, CSS, SCSS, Bootstrap, JavaScript, SQL, UI/UX and tools for them like VS Code, console (Ubuntu, Windows), SQLite, PhotoShop and GNU Images Manipulator. Learned object-oriented programming, HTTP, BEM methodology.</div>
+                            Стефанів Максим - прожив у західній Україні все життя.Здобув навички у: Python, Django, HTML, CSS, SCSS, Bootstrap, JavaScript, SQL, UI/UX та навчився користуватися інструментами для них, такими як VS Code, консоль (Ubuntu, Windows), SQLite, Photoshop та GNU Manipulate. Вивчив об'єктно-орієнтоване програмування, HTTP та методологію BEM для CSS та SCSS.</div>
                         </div>
                     <footer class="article-footer">
-                        <p>Our contacts:</p>
+                        <p>Наші контакти:</p>
                         <ul class="contacts contacts_misha flex row">
-                            <li class="item item_first">Misha's contacts:</li>
+                            <li class="item item_first">Контакти Михайла:</li>
                             <li class="item"><a target="_blank href="instagram"><i class="fa-brands fa-instagram"></i></a></li>
                             <li class="item"><a target="_blank href="facebook"><i class="fa-brands fa-facebook"></i></a></li>
                             <li class="item"><a target="_blank href="twitter"><i class="fa-brands fa-twitter"></i></a></li>
@@ -50,7 +50,7 @@
                             <li class="item"><a target="_blank href="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
                         </ul>
                         <ul class="contacts contacts_maksym flex row">
-                            <li class="item item_first">Maksym's contacts:</li>
+                            <li class="item item_first">Контакти Максима:</li>
                             <li class="item"><a href="https://instagram.com/maxymstefaniv" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                             <li class="item"><a href="https://facebook.com/maxymstefaniv" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                             <li class="item"><a href="https://twitter.com/MaksimStefaniv" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>

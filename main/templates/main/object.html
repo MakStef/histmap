@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}{{object.name}}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/null.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/object.css' %}">
+    {% endblock %}
+    {% block body %}
+    <div class="wrapper-global flex column">
+        <div class="content-global flex column">
+            <div class="history-object flex row">
+                <iframe src="media/unwrapped/{{object.slug}}/index.html" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="articles flex row">
+                {% include 'main/navigation.html' %}
+                <article class="history-object-describe flex column">
+                    <header>{{object.name}}</header>
+                    <div class="about">{{object.about}}</div>
+                </article>
+            </div>    
+        </div>
+    </div>
+{% endblock %}

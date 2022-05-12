@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-e-h9jq9imdn7a_-g_1ka7rdizfwsa=cl0%mi_nff0j94f03@xp
 DEBUG = True
 
 ALLOWED_HOSTS = [
-
+    '*',
 ]
 
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
@@ -119,10 +119,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'static/')
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media/')
+STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

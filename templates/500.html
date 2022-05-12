@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERR 500 HISTMAP</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        html, body, .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            color: #ececec;
+            font-family: 'Roboto Slab', sans-serif;
+        }
+        .error {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+            font-size: 400%;
+            font-weight: bold;
+            text-align: center;
+        }
+        .alert-text {
+            position: relative;
+            display: inline-block;
+            width: clamp(300px, 30em, 70%);
+            font-size: 150%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error">500</div>
+        <div class="alert-text">Проблема на нашій стороні, просимо вибачення, скоро проблему буде вирішено!</div>
+    </div>    
+</body>
+</html>
