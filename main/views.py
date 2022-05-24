@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 
-from .utils import histobj_unzipper as unzip
+from .utils.utils import unzip, path_to_files
 
 from .models import *
 from random import choice
@@ -55,11 +55,14 @@ def history_objects(request, country_slug, location_slug):
 
 def history_object(request, country_slug, location_slug, history_object_slug):
     # Unwraps all archived levels that weren't unwrapped already
-    unzip.unzip(request, history_object_slug)
+    unzip(history_object_slug)
+    wasm, data = path_to_files(history_object_slug)
     navigation = Navigation.objects.all()
     object = History_Object.objects.get(slug=history_object_slug)
     context = {
         'navigation' : navigation,
         'object' : object,
+        'wasm' : wasm,
+        'data' : data,
     }
     return render(request, 'main/object.html', context)
