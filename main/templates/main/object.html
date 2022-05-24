@@ -8,7 +8,7 @@
 {% endblock %}
 {% block body %}
     <div class="wrapper-global flex column">
-        <div class="history-object flex row">
+        <div id="history-object flex row">
             <div id="unity-container" class="unity-desktop">
                 <canvas id="unity-canvas"></canvas>
                 <div id="unity-loading-bar">
@@ -69,8 +69,11 @@
           config.devicePixelRatio = 1;
           unityShowBanner('WebGL builds are not supported on mobile devices.');
         } else {
-          canvas.style.width = "960px";
-          canvas.style.height = "600px";
+          canvas.parentElement.style.position = "relative";
+
+          canvas.style.display = "block";
+          canvas.style.width = "85%";
+          canvas.style.margin = "0 auto";
         }
   
         var script = document.createElement("script");
