@@ -48,10 +48,10 @@
           }, 5000);
         }
   
-        var loaderUrl = "{% static 'main/js/objectServe/object.loader.js' %}";
+        var loaderUrl = "{{loader}}";
         var config = {
           dataUrl: "{{data}}",
-          frameworkUrl: "{% static 'main/js/objectServe/object.framework.js' %}",
+          frameworkUrl: "{{framework}}",
           codeUrl: "{{wasm}}",
         };
   

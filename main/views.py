@@ -56,7 +56,7 @@ def history_objects(request, country_slug, location_slug):
 def history_object(request, country_slug, location_slug, history_object_slug):
     # Unwraps all archived levels that weren't unwrapped already
     unzip(history_object_slug)
-    wasm, data = path_to_files(history_object_slug)
+    wasm, data, framework, loader = path_to_files(history_object_slug)
     navigation = Navigation.objects.all()
     object = History_Object.objects.get(slug=history_object_slug)
     context = {
@@ -64,5 +64,7 @@ def history_object(request, country_slug, location_slug, history_object_slug):
         'object' : object,
         'wasm' : wasm,
         'data' : data,
+        'framework' : framework,
+        'loader' : loader,
     }
     return render(request, 'main/object.html', context)

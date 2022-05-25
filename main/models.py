@@ -31,7 +31,7 @@ class History_Object(models.Model):
     name = models.CharField(verbose_name="Назва об'єкту", max_length=150)
     about = models.TextField(verbose_name="Опис об'єкту")
     location = models.ForeignKey('Location', on_delete=models.PROTECT)
-    layout = models.FileField(verbose_name=".zip архів з макетом об'єкту", upload_to="layouts")
+    layout = models.FileField(verbose_name=".zip архів з макетом об'єкту", upload_to="layout")
     slug = models.SlugField(unique=True)
 
     def __str__(self):
