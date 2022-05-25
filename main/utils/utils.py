@@ -25,9 +25,9 @@ def path_to_files(obj_slug):
     path = MEDIA_ROOT.joinpath("layout_unwrapped/"+obj_slug)
     if pathlib.Path.exists(path):
         for myfile in path.glob("*.wasm"):
-            obj_wasm = myfile
+            obj_wasm = +str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
         for myfile in path.glob("*.data"):
-            obj_data = myfile
-        return "/media/"+str(obj_wasm.relative_to(MEDIA_ROOT)), "/media/"+str(obj_data.relative_to(MEDIA_ROOT))
+            obj_data = str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
+        return "/media/"+obj_wasm, "/media/"+obj_data
     else:
         return print("Was lookup for non-existing file")
