@@ -25,7 +25,7 @@ def path_to_files(obj_slug):
     path = MEDIA_ROOT.joinpath("layout_unwrapped/"+obj_slug)
     if pathlib.Path.exists(path):
         for myfile in path.glob("*.wasm"):
-            obj_wasm = +str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
+            obj_wasm = str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
         for myfile in path.glob("*.data"):
             obj_data = str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
         return "/media/"+obj_wasm, "/media/"+obj_data
