@@ -5,7 +5,7 @@ import os
 from django.shortcuts import get_object_or_404
 
 from main.models import History_Object
-from histmap.settings import MEDIA_ROOT
+from histmap.settings import MEDIA_ROOT, MEDIA_URL
 
 def unzip(obj_slug):
     # Get object or return 404
@@ -26,9 +26,14 @@ def unzip(obj_slug):
             arch.extractall(path)
             
 def path_to_files(obj_slug):
+    # Path to dir where files should be contained
     path = MEDIA_ROOT.joinpath("layout_unwrapped/"+obj_slug)
-    m = "/media/"
+    # Url to media storage
+    m = MEDIA_URL
+    # If path to files do exist then return their paths
+    # Else we raising FileNotFound Error
     if pathlib.Path.exists(path):
+        # Object's path is relative to media folder setup in project settings
         for myfile in path.glob("*.wasm"):
             obj_wasm = str(myfile.relative_to(MEDIA_ROOT)).replace("\\","/")
         for myfile in path.glob("*.data"):
